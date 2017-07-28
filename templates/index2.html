@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<title>test</title>
+	<style type="text/css">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+	<div class="content">
+		<div class="topBar">
+		</div>
+		<div class="mainBar">
+			<introCard>
+				<h3>html元素中的data属性结合css的content</h3>
+				<cardContent>					
+					<span class="spe" data-add="world">hello</span>
+					<p>其中world是写在data属性中，然后css中content属性用attr函数取得 最后显示出来</p>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>闪闪发光特效</h3>
+				<cardContent>
+					<button class="bling" >闪闪按钮</button>
+					<p>使用css animation做成的一个按钮 颜色变化有些丑 发光这方面的特效主要和box-shadow这个属性有关。</p>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>走马灯  几张不同的图片</h3>
+				<cardContent>
+					<img id="runningPic1"/>
+					<p>使用setInterval函数每隔一定时间改变img元素的src属性</p>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>走马灯  一张图片</h3>
+				<cardContent>
+					<div class="allPic">
+					</div>
+					<p>通过setInterval函数改变backgroundPositionX属性</p>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>文字滚动</h3>
+				<cardContent>
+					<div class="textScroll">
+						<div class="textSrcollIn">世路如今已惯，此心到处悠然。寒光亭下水如天，飞起沙鸥一片。———宋.张孝祥《西江月》</div>
+					</div>
+					<section>这个文字滚动是通过setInterval函数改变元素的scrollLeft属性实现的  不过由于该属性无法设为负数 所以无法连续滚动  每次重新开始滚动时都是从最左边开始的</section>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>刮刮卡效果</h3>
+				<cardContent>
+					<div class="scratchCard">
+						<div class="bottomCard">
+							<span>谢谢惠顾！</span>
+						</div>
+						<canvas id="cav1"></canvas>
+					</div>
+					<section> 使用canvas完成  其中如何计算得到圆心坐标比较复杂 以及需要注意globalCompositeOperation这个属性</section>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>canvas画圆</h3>
+				<cardContent>
+					<canvas id="cav2">您的浏览器不支持canvas元素！</canvas>
+					<section>如果不定义高度和宽度 canvas画布会自动初始化为300*150像素  如需要自定义高宽 比例应该是二比一  否则画布会裁剪或者拉伸 图形会变形  比如正圆会变为椭圆或者正圆缺一部分  目前实验所得：如果在HTML文档中定义高度和宽度会发生裁剪 如果在css文件中 会发生拉伸变形</section>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>简单的计算器</h3>
+				<cardContent>
+					<div class="calculator">
+						<input class="inputArea" />
+						<div class="calcuArea">
+							<span class="priBtn clear">A/C</span>
+							<span class="priBtn zhengfu">+/-</span>
+							<span class="priBtn">%</span>
+							<span class="priBtn">+</span>
+							<span class="priBtn">9</span>
+							<span class="priBtn">8</span>
+							<span class="priBtn">7</span>
+							<span class="priBtn">-</span>
+							<span class="priBtn">6</span>
+							<span class="priBtn">5</span>
+							<span class="priBtn">4</span>
+							<span class="priBtn">*</span>
+							<span class="priBtn">3</span>
+							<span class="priBtn">2</span>
+							<span class="priBtn">1</span>
+							<span class="priBtn">/</span>
+							<span class="priBtn double">0</span>
+							<span class="priBtn point">.</span>
+							<span class="priBtn equal">=</span>
+						</div>
+					</div>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>跳转到百度</h3>
+				<cardContent>
+					<button id="BDBtn">To Baidu</button>
+					<input type="search" />
+					<input type="number" />
+					<input type="date" />
+					<input type="color" />
+					<input type="submit" />
+					<button type="submit">提交</button>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>登录表单</h3>
+				<cardContent>
+					<form method="get" id="loginIn" action="../1.py">
+					<label for="name">姓名</label>
+					<input type="text" id="name" />
+					<label for="pw">密码</label>
+					<input type="password" id="pw" />
+					<label for="tel">电话</label>
+					<input type="test" id="tel" />
+					<input type="submit"/>
+					</form>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>视音频播放</h3>
+				<cardContent>
+					<video class="vidClas"src="" autoplay controls>视频</video>
+					<audio class="vidClas" src="" autoplay controls>音频</audio>
+					<span id="playBtn">播放</span>
+					<span>使用HTML5中新增的标签video和radio</span>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>图片3D旋转</h3>
+				<p>实现3d视角的两个主要属性：perspective和transform-style</p>
+				<cardContent>
+					<div class="container3d">
+						<img src="../static/img/pic1.jpg" style="transform:rotateY(0) translateZ(200px);"/>
+						<img src="../static/img/pic2.jpg" style="transform:rotateY(36deg) translateZ(200px);"/>
+						<img src="../static/img/pic5.jpg" style="transform:rotateY(72deg) translateZ(200px);"/>
+						<img src="../static/img/pic6.jpg" style="transform:rotateY(108deg) translateZ(200px);"/>
+						<img src="../static/img/pic7.jpg" style="transform:rotateY(144deg) translateZ(200px);"/>
+						<img src="../static/img/pic8.jpg" style="transform:rotateY(180deg) translateZ(200px);"/>
+						<img src="../static/img/pic9.jpg" style="transform:rotateY(216deg) translateZ(200px);"/>
+						<img src="../static/img/pic10.jpg" style="transform:rotateY(252deg) translateZ(200px);"/>
+						<img src="../static/img/pic11.jpg" style="transform:rotateY(288deg) translateZ(200px);"/>
+						<img src="../static/img/pic12.jpg" style="transform:rotateY(324deg) translateZ(200px);"/>
+					</div>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>图片点击放大</h3>
+				<p></p>
+				<cardContent>
+					<img class="oriPic" src="../static/img/pic6.jpg" />
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>css实现波浪</h3>
+				<p></p>
+				<cardContent>
+					<div class="wave">
+					</div>
+					<canvas class="waveCan"></canvas>
+				</cardContent>
+			</introCard>
+			<introCard>
+				<h3>动画</h3>
+				<p></p>
+				<cardContent>
+					<div class="test">
+					</div>
+				</cardContent>
+			</introCard>
+		</div>
+		<div class="bottomBar">
+			<span>Author:Zhang<br/>
+			E-mail:233@233.com</span>
+		</div>
+	</div>
+
+	<script type="text/javascript"  src="../static/js/index.js"></script>
+</body>
+</html>
